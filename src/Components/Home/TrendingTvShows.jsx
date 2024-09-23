@@ -18,7 +18,7 @@ if(Loading)
       </div>
       <div className="flex space-x-4 overflow-x-auto">
         {Shows.map((show) => (
-          <Link key={show.id} to={`/Shows/${show.id}`} className="group">
+          <Link key={show.id} to={`/tv_shows/${show.id}`} className="group">
             <div className="relative w-40 h-60">
               <img
                 src={`https://image.tmdb.org/t/p/w500${show.poster_path}`}

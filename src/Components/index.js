@@ -6,6 +6,14 @@ import TrendingTvShows from "./Home/TrendingTvShows";
 import Spinner from "./Loading";
 import Testimonial from "./Home/Testimonial";
 import Footer from "./Home/Footer";
+import Movies from "./Movies/Movies";
+import Shows from "./Shows/Shows";
+import DisplayGenre from "./Genre/DisplayGenre";
+import GenreMovies from "./Genre/GenreMovies";
+import Detail from "./Genre/Detail";
+import MovieDetail from "./Home/MovieDetail";
+import TVShowDetail from "./Home/TVShowDetail ";
+import Sidebar from "./SideBar";
 export {
     Home,
     Header,
@@ -15,4 +23,12 @@ export {
     Spinner,
     Testimonial,
     Footer,
+    Movies,
+    Shows,
+    DisplayGenre,
+    GenreMovies,
+    Detail,
+    MovieDetail,
+    TVShowDetail,
+    Sidebar,
 }

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Header, HeroSection } from '../Components/index';
+import { Footer, Header, HeroSection } from '../Components/index';
 import { Outlet, useLoaderData } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { addBG } from '../../Redux/displaybg';
@@ -31,6 +31,7 @@ const HomePage = () => {
 
   // Select background movies from Redux state
   const backgroundMovies = useSelector((state) => state.displaybg[0]);
+  const bars = useSelector(state=>state.sidebar)
 
   // Change background every 5 seconds
   useEffect(() => {
@@ -52,21 +53,21 @@ const HomePage = () => {
   return (
     <div>
       <div
-      className=' h-[85vh]'
+      className=' h-[85vh] max-[450px]:h-[65vh]'
       style={{
         backgroundImage: `url(https://image.tmdb.org/t/p/w1280${currentMovie.backdrop_path})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         transition: 'background-image 0.5s ease-in-out', // Smooth transition
       }}>
-        <div className="absolute  h-[85vh] inset-0 bg-black opacity-60"></div>
+        <div className={`absolute  h-[85vh] max-[450px]:h-[65vh] inset-0 bg-black opacity-60`}></div>
       <div>
         <Header />
         <HeroSection movie={currentMovie} /> {/* Pass the current movie to HeroSection */}
       </div>
     </div>
     <Outlet/>
-    {/* Footer */}
+    <Footer/>
       </div>
   );
 };

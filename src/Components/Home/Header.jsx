@@ -1,16 +1,26 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import icon from "../../../public/Images/image.png"
+import { useDispatch, useSelector } from "react-redux";
+import hamburger from "../../../public/Images/image.png"
+import {toggle} from "../../../Redux/sidebar"
+import {Sidebar} from "../index";
 const Header = () => {
+  const bars = useSelector(state=>{
+    console.log(state.sidebar);
+    
+   return state.sidebar
+    
+  })
+  const dispatch = useDispatch();
   const [input, setInput] = useState("");
   return (
-    <header className=" relative z-0 bg-transparent flex items-center justify-between py-6 px-6 max-md:px-2">
+    <header className={` relative ${bars ? " " : " z-0"} bg-transparent flex items-center justify-between py-6 px-6 max-md:px-2`}>
       <h1 className=" text-4xl font-bold tracking-widest text-[#60A4DE]">CinePop</h1>
       <nav className=" flex space-x-7 text-lg max-[930px]:hidden text-white">
         <NavLink to={"/"}>Home</NavLink>
         <NavLink to={"movies"}>Movies</NavLink>
         <NavLink to={"tv_shows"}>TV Shows</NavLink>
-        <NavLink to={"genre"}>Genre</NavLink>
+        <NavLink to={"genres"}>Genre</NavLink>
         <NavLink to={"about"}>About</NavLink>
       </nav>
       <div className=" flex space-x-4 max-[930px]:hidden">
@@ -27,9 +37,13 @@ const Header = () => {
           Search
         </button>
       </div>
-      <div className="hidden max-[930px]:block">
-        <img className=" size-8" src={icon} alt="" />
+      <div className="hidden max-[930px]:block "
+       onClick={()=>{
+        dispatch(toggle(true))
+    }}>
+      <img className=" size-8" src={hamburger} alt=""/>
       </div>
+      { bars && <Sidebar/>}
     </header>
   );
 };

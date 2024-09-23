@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addTrendingMovies } from "../../../Redux/trendingmovies"
-import {Footer, Testimonial, TrendingMovies, TrendingTvShows} from "../index"
+import {Footer, Sidebar, Testimonial, TrendingMovies, TrendingTvShows} from "../index"
 import { addTrendingTvShow } from "../../../Redux/trendingtvShow";
 const Home = () => {
   const dispatch = useDispatch()
@@ -40,7 +40,6 @@ const Home = () => {
     <TrendingMovies Loading={Mloading}/>
     <TrendingTvShows Loading={Sloading}/>
     <Testimonial/>
-    <Footer/>
   </div>;
 };
 
