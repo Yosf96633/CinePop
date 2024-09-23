@@ -53,14 +53,14 @@ const HomePage = () => {
   return (
     <div>
       <div
-      className=' h-[85vh] max-[450px]:h-[65vh]'
+      className=' h-[85vh] max-[450px]:h-[70vh]'
       style={{
         backgroundImage: `url(https://image.tmdb.org/t/p/w1280${currentMovie.backdrop_path})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         transition: 'background-image 0.5s ease-in-out', // Smooth transition
       }}>
-        <div className={`absolute  h-[85vh] max-[450px]:h-[65vh] inset-0 bg-black opacity-60`}></div>
+        <div className={`absolute  h-[85vh] max-[450px]:h-[70vh] inset-0 bg-black opacity-60`}></div>
       <div>
         <Header />
         <HeroSection movie={currentMovie} /> {/* Pass the current movie to HeroSection */}

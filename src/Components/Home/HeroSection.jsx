@@ -5,7 +5,7 @@ const HeroSection = ({ movie }) => {
   return (
     <div className="p-5 md:p-10 text-white relative z-10 top-8 xl:top-[5rem] max-md:top-3">
       <h1 className="text-3xl md:text-5xl font-bold xl:text-7xl">{movie.title}</h1>
-      <p className="mt-2 text-lg max-xl:text-2xl">{movie.overview}</p>
+      <p className="mt-2 text-lg max-xl:text-2xl max-sm:text-base">{movie.overview}</p>
       <p className="mt-2 xl:text-xl  sm:text-3xl ">Release Date: <span className=' font-medium'>{movie.release_date}</span></p>
       <div className="flex items-center mt-2">
         <ReactStars

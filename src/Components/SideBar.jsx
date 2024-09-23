@@ -15,11 +15,11 @@ const Sidebar = () => {
     <div className={`bg-gray-800 text-white w-64 h-[50vh] min-h-[100vh] p-4 fixed top-0 right-0 z-50`}>
       <div className=" flex px-3 justify-between items-center mb-6">
       <h2 className="text-3xl font-bold">Menu</h2>
-      <span onClick={ () =>{
+      <span className="size-6" onClick={ () =>{
         dispatch(toggle(false))
       }}>❌</span>
       </div>
-      <ul className="space-y-8 text-xl">
+      <ul className="space-y-8 text-xl mt-8">
         <li>
           <Link to="/" className="hover:text-gray-400">Home</Link>
         </li>
