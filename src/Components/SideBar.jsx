@@ -21,19 +21,29 @@ const Sidebar = () => {
       </div>
       <ul className="space-y-8 text-xl mt-8">
         <li>
-          <Link to="/" className="hover:text-gray-400">Home</Link>
+          <Link onClick={ () =>{
+        dispatch(toggle(false))
+      }}  to="/" className="hover:text-gray-400">Home</Link>
         </li>
         <li>
-          <Link to="/movies" className="hover:text-gray-400">Movies</Link>
+          <Link onClick={ () =>{
+        dispatch(toggle(false))
+      }} to="/movies" className="hover:text-gray-400">Movies</Link>
         </li>
         <li>
-          <Link to="/tv_shows" className="hover:text-gray-400">TV Shows</Link>
+          <Link onClick={ () =>{
+        dispatch(toggle(false))
+      }} to="/tv_shows" className="hover:text-gray-400">TV Shows</Link>
         </li>
         <li>
-          <Link to="/genres" className="hover:text-gray-400">Genres</Link>
+          <Link onClick={ () =>{
+        dispatch(toggle(false))
+      }} to="/genres" className="hover:text-gray-400">Genres</Link>
         </li>
         <li>
-          <Link to="/about" className="hover:text-gray-400">About</Link>
+          <Link onClick={ () =>{
+        dispatch(toggle(false))
+      }} to="/about" className="hover:text-gray-400">About</Link>
         </li>
       </ul>
       <form onSubmit={handleSearch} className="mt-6">
