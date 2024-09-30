@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{useEffect} from "react";
 import { AboutPage, GenrePage, HomePage, MoviesPage, SearchPage, ShowsPage } from "./Pages/pages";
 import { Detail, GenreMovies, Home, MovieDetail, TVShowDetail } from "./Components/index";
 import { Loader } from "./Pages/HomePage";
@@ -9,6 +9,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { FetchGenre } from "./Pages/GenrePage";
+import { useSelector } from "react-redux";
 const route = createBrowserRouter(
   createRoutesFromElements(
     <>
@@ -32,8 +33,21 @@ const route = createBrowserRouter(
   )
 );
 const App = () => {
+  const bars = useSelector(state=>state.sidebar);
+  useEffect(() => {
+    console.log("Sidebar state:", bars); // Check if the state is correct
+    if (bars) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [bars]);
+  
   return (
-    <div className="w-[100vw] overflow-x-hidden">
+    <div className={`w-[100vw] overflow-x-hidden`}>
       <RouterProvider router={route} />
     </div>
   );

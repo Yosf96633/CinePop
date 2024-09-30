@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch  } from "react-redux";
 import { Link , useNavigate } from "react-router-dom";
-import { toggle } from "../../Redux/sidebar";
+import sidebar, { toggle } from "../../Redux/sidebar";
 import { motion } from "framer-motion";
 
 const Sidebar = () => {
@@ -25,7 +25,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className={`bg-gray-800 text-white w-64 h-[50vh] min-h-[100vh] p-4 fixed top-0 right-0 z-50`}>
+    <div className={`backdrop-blur-lg text-white w-64 h-[50vh] min-h-[100vh] p-4 fixed top-0 right-0 z-50`}>
       <div className="flex px-3 justify-between items-center mb-6">
         <h2 className="text-3xl font-bold">Menu</h2>
         <span

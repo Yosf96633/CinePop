@@ -37,9 +37,9 @@ const Home = () => {
     FetchDataMovies()
     FetchDataShows();
   }, []);
-  return <div>
-    <TrendingMovies Loading={Mloading}/>
-    <TrendingTvShows Loading={Sloading}/>
+  return <div className=" relative -z-0">
+   <TrendingMovies Loading={Mloading}/>
+   <TrendingTvShows Loading={Sloading}/>
     <Testimonial/>
   </div>;
 };

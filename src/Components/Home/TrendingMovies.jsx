@@ -19,7 +19,7 @@ const TrendingMovies = ({Loading}) => {
       <div className="flex space-x-4 overflow-x-auto">
         {movies.map((movie) => (
           <Link key={movie.id} to={`/movies/${movie.id}`} className="group">
-            <div className="relative w-40 h-60">
+            <div className="relative w-40 h-60 -z-50 ">
               <img
                 src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                 alt={movie.title}

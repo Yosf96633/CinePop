@@ -49,7 +49,6 @@ const HomePage = () => {
 
   // Get the current background movie
   const currentMovie = backgroundMovies[currentIndex];
-
   return (
     <div>
       <motion.div
@@ -79,7 +78,9 @@ const HomePage = () => {
         <HeroSection movie={currentMovie} /> {/* Pass the current movie to HeroSection */}
       </div>
     </motion.div>
-    <Outlet/>
+   <div className= {`relative  ${bars ? " -z-50" : " z-0"}`}>
+   <Outlet/>
+   </div>
     <Footer/>
       </div>
   );
