@@ -14,6 +14,9 @@ import Detail from "./Genre/Detail";
 import MovieDetail from "./Home/MovieDetail";
 import TVShowDetail from "./Home/TVShowDetail ";
 import Sidebar from "./SideBar";
+import Features from "./About/Features";
+import Technologies from "./About/Techologies";
+import AboutMe from "./About/AboutMyself";
 export {
     Home,
     Header,
@@ -31,4 +34,7 @@ export {
     MovieDetail,
     TVShowDetail,
     Sidebar,
+    Features,
+    Technologies,
+    AboutMe,
 }

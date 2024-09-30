@@ -1,6 +1,6 @@
 import React from "react";
-import { GenrePage, HomePage, MoviesPage, ShowsPage } from "./Pages/pages";
-import { Detail, GenreMovies, Home, MovieDetail, TVShowDetail  , Sidebar} from "./Components/index";
+import { AboutPage, GenrePage, HomePage, MoviesPage, SearchPage, ShowsPage } from "./Pages/pages";
+import { Detail, GenreMovies, Home, MovieDetail, TVShowDetail } from "./Components/index";
 import { Loader } from "./Pages/HomePage";
 import {
   createBrowserRouter,
@@ -21,6 +21,10 @@ const route = createBrowserRouter(
         <Route loader={FetchGenre} path="genres" element={<GenrePage/>}/>
         <Route path="/genres/:id" element={<GenreMovies />} />
         <Route path="/genres/:id/:movieId" element={<Detail />} />
+        <Route path="/about" element={<AboutPage/>}/>
+        <Route path="/search" element={<SearchPage/>}/>
+        <Route path="/search/:movieId" element={<Detail/>}/>
+
 
 
       </Route>

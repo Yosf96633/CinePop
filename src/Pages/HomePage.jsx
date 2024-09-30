@@ -3,7 +3,7 @@ import { Footer, Header, HeroSection } from '../Components/index';
 import { Outlet, useLoaderData } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { addBG } from '../../Redux/displaybg';
-
+import { motion } from 'framer-motion';
 // Loader function to fetch movie data
 export async function Loader() {
   try {
@@ -52,7 +52,20 @@ const HomePage = () => {
 
   return (
     <div>
-      <div
+      <motion.div
+      initial={{
+        opacity:0,
+        y:-100
+      }}
+      animate={{
+        opacity:1,
+        y:0
+      }}
+      transition={{
+        delay:0.3,
+        duration:0.5,
+        ease:"backInOut"
+      }}
       className=' h-[85vh] max-[450px]:h-[70vh]'
       style={{
         backgroundImage: `url(https://image.tmdb.org/t/p/w1280${currentMovie.backdrop_path})`,
@@ -65,7 +78,7 @@ const HomePage = () => {
         <Header />
         <HeroSection movie={currentMovie} /> {/* Pass the current movie to HeroSection */}
       </div>
-    </div>
+    </motion.div>
     <Outlet/>
     <Footer/>
       </div>

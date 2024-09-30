@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { motion } from 'framer-motion';
 const testimonials = [
   {
     name: "John Doe",
@@ -20,15 +20,48 @@ const testimonials = [
     text: "It's the best tool I've used for my projects. The interface is clean, and the performance is top-notch."
   }
 ];
-
+  const parentVarient = {
+    hidden:{
+      opacity:0,
+      scale:0,
+    },
+    visible:{
+      opacity:1,
+      scale:1,
+      transition:{
+        duration:0.5,
+        delay:0.3,
+        staggerChildren:0.4
+      }
+    }
+  }
+  const childVarient = {
+    hidden:{
+      opacity:0,
+      y:100,
+    },
+    visible:{
+      opacity:1,
+      y:0,
+      transition:{
+        duration:0.4,
+      }
+    }
+  }
 const Testimonial = () => {
   return (
-    <div className="bg-gray-100 py-12">
+    <motion.div
+    variants={parentVarient}
+    initial={"hidden"}
+    whileInView={"visible"}
+    viewport={{once:true}}
+     className="bg-gray-100 py-12">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-8 text-blue-900">What Our Clients Say</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <div
+            <motion.div
+            variants={childVarient}
               key={index}
               className="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center">
               <img
@@ -39,11 +72,11 @@ const Testimonial = () => {
               <h3 className="text-xl font-semibold text-blue-900">{testimonial.name}</h3>
               <p className="text-sm text-gray-600">{testimonial.role}</p>
               <p className="mt-4 text-gray-700">"{testimonial.text}"</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
