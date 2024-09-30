@@ -38,25 +38,8 @@ const Home = () => {
     FetchDataShows();
   }, []);
   return <div>
-    <motion.div
-    className=" relative -z-10"
-      initial={{
-        opacity:0,
-        x:-100
-      }}
-      animate={{
-        opacity:1,
-        x:0
-      }}
-      transition={{
-        delay:0.2,
-        duration:0.5,
-        ease:"backInOut"
-      }}
-    >
     <TrendingMovies Loading={Mloading}/>
     <TrendingTvShows Loading={Sloading}/>
-    </motion.div>
     <Testimonial/>
   </div>;
 };
